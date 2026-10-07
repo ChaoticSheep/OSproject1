@@ -28,7 +28,7 @@ Next Session I plan to research the encryption program and make a plan to go abo
 I will look at the encryption section and plan it. I will use the same method for the logger, but add functions to specific keywords.
 
 # 10-07 10:51am
-I have added add, encrypt, and decrypt keyword methods. I have addeded error and results from those inputs.
+I have added add, encrypt, and decrypt keyword methods. I have added error and results from those inputs.
 The Encryption is completed as of now. 
 
 I will begin to work on the driver file and plan accordingly. 

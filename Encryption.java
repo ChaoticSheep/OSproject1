@@ -1,11 +1,12 @@
 import java.util.Scanner;
+import java.io.PrintStream;
 
 public class Encryption {
     public static String encrypt(String text) {
         StringBuilder encryptedText = new StringBuilder();
 
         for (char c : text.toCharArray()) {
-            // Shift each character by 3 positions in the ASCII table
+            // Shift each character forward by 3 positions in the ASCII table
             char encryptedChar = (char) (c + 3);
             encryptedText.append(encryptedChar);
         }
@@ -54,7 +55,7 @@ public class Encryption {
                 else if(action.equals("DECRYPT")  && !message.isEmpty()) {
                     String encryptedText = message;
 
-                    String decryptedText = decrypt(encryptedText); // Decrypting by applying the same encryption method
+                    String decryptedText = decrypt(encryptedText); 
                     System.out.println("RESULT"+decryptedText);
                 }
                 else {
