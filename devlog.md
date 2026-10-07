@@ -10,17 +10,16 @@ Sections needed:
 The next session, I will begin the logger.
 
 # 10-06 3:16
-I will begin to plan the logger section.
+I will begin to plan the logger section. I made notes about the requirements needed for the general use. 
+I will start with writing the commands to the log file and add the details later on (date and format).
 
-notes:
-first non white - action, rest is message
-24 hr notation YYYY-MM-DD HH:MM [ACTION] MESSAGE
-accept messages until 'quit'
-
-CPU -> MM -> logger
-- logger takes the statement , and read it until 'halt' is done
+I have completed the logger's log file. It takes the statement written in the terminal, and reads it until 'QUIT' is stated.
 
 # 10-06 8:08
-I am continuing to work on the logger. Trying to understand how to implement format description.
--completed formatting
--working on commands
+I am continuing to work on the logger. Trying to understand how to implement format description and date/time for the command statements.
+
+# 10-06 9:31
+I have completed command input for the file, and formatting each statement as it goes into the log file.
+The logger is completed as of now.
+
+Next Session I plan to research the encryption program and make a plan to go about it.
