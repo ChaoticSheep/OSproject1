@@ -19,9 +19,9 @@ public class Logger {
         while (!line.equals("QUIT")) {
             // finds the first whitespace to seperate command
             int index = line.indexOf(" ");
-            String logLine = line.substring(0,index);
+            String action = line.substring(0,index);
             String formattedDate = date.format(formatTime);
-            log.println(formattedDate + " [" + logLine + "]" + line.substring(index));
+            log.println(formattedDate + " [" + action + "]" + line.substring(index));
             line = s.nextLine();
         } 
         s.close();
