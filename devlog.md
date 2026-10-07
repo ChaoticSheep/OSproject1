@@ -34,7 +34,9 @@ The Encryption is completed as of now.
 I realized the encrytion does not use the process class. I will go back and edit this. 
 
 # 10-07 11:51 pm 
-I will use the current time to edit in processes now I have the basic idea for the encryption.
+I will use the current time to edit in processes now I have the basic idea for the encryption. The Encrypt and Decrypt do not work on printing results. The process is invalid for some reason.
 
 # 10-07 2:00 pm 
 Continuing to fix processes. The Encrypt and decrypt were not showing results, so I added java and class paths to set up communication pipes.
+
+I will work on the driver program next session and plan it accordingly. 
