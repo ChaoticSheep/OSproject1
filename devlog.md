@@ -31,4 +31,10 @@ I will look at the encryption section and plan it. I will use the same method fo
 I have added add, encrypt, and decrypt keyword methods. I have added error and results from those inputs.
 The Encryption is completed as of now. 
 
-I will begin to work on the driver file and plan accordingly. 
+I realized the encrytion does not use the process class. I will go back and edit this. 
+
+# 10-07 11:51 pm 
+I will use the current time to edit in processes now I have the basic idea for the encryption.
+
+# 10-07 2:00 pm 
+Continuing to fix processes. The Encrypt and decrypt were not showing results, so I added java and class paths to set up communication pipes.
