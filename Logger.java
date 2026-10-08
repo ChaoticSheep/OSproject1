@@ -7,10 +7,11 @@ import java.io.FileOutputStream;
 //java -cp "C:\Users\amari\AppData\Roaming\Code\User\workspaceStorage\772fcb70233a787b4b5a6cedf810bd7a\redhat.java\jdt_ws\OSproject1_d786fa28\bin" Logger log.txt
 public class Logger {
     public static void main(String[] args) throws Exception {
-        String fileName = args[0];
-        Scanner s = new Scanner(System.in);
         
+        Scanner s = new Scanner(System.in);
+        String fileName = args[0];
         PrintStream log = new PrintStream(new FileOutputStream(fileName, true));
+        
         
         
         DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");

@@ -47,3 +47,6 @@ I set up the driver's main menu and will connect the logger with the Driver.
 
 I have set up the driver program, I will begin to work on the History section as result is not printing right now. This will help me see the overall issue. I have set up the commands, but it's
 not writing to the log file. I will continue this next session. 
+
+# 10-08 11:36 am
+Continuing to solve the communication. I set up the command line, but there is still an issue reading pass from encryption because the command is sent without a message.

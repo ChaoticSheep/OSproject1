@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -17,17 +18,28 @@ public class Driver {
             System.out.println((i + 1) + ". " + history.get(i));
         }
     }
+    //javac *.java
+    //java Driver log.txt
     public static void main(String[] args) throws Exception {
-        // set up encryption process
-        Process encryptionProcess = Runtime.getRuntime().exec(
-            "java -cp \"C:\\Users\\amari\\AppData\\Roaming\\Code\\User\\workspaceStorage\\772fcb70233a787b4b5a6cedf810bd7a\\redhat.java\\jdt_ws\\OSproject1_d786fa28\\bin\" Encryption process"
+
+        String fileName = args[0];
+        String javaExecutable = System.getProperty("java.home") + File.separator + "bin"
+            + File.separator + (File.separatorChar == '\\' ? "java.exe" : "java");
+        String classpath = System.getProperty("java.class.path");
+
+        ProcessBuilder encryptionBuilder = new ProcessBuilder(
+            javaExecutable, "-cp", classpath, "Encryption", "process"
         );
+        encryptionBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);
+        Process encryptionProcess = encryptionBuilder.start();
         InputStream encryptionIn = encryptionProcess.getInputStream();
         OutputStream encryptionOut = encryptionProcess.getOutputStream();
-        //set up logger process
-        Process logger = Runtime.getRuntime().exec(
-            "java -cp \"C:\\Users\\amari\\AppData\\Roaming\\Code\\User\\workspaceStorage\\772fcb70233a787b4b5a6cedf810bd7a\\redhat.java\\jdt_ws\\OSproject1_d786fa28\\bin\" Logger log.txt"
-        );  
+
+        ProcessBuilder loggerBuilder = new ProcessBuilder(
+            javaExecutable, "-cp", classpath, "Logger", fileName
+        );
+        loggerBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);
+        Process logger = loggerBuilder.start();
         OutputStream loggerOutStream = logger.getOutputStream();
         PrintStream toLogger = new PrintStream(loggerOutStream);
         
@@ -44,18 +56,21 @@ public class Driver {
     
 
         while(!userInput.equals("QUIT")) {
-            System.out.print("Enter command (PASS / ENCRYPT <text> / DECRYPT <text> / HISTORY / QUIT): ");
+            System.out.print("Enter command (PASSWORD / ENCRYPT <text> / DECRYPT <text> / HISTORY / QUIT): ");
             userInput = userInputScanner.nextLine();
             
-            if(userInput.equals("PASS")) {
+            if(userInput.equals("PASSWORD")) {
                 System.out.println("1. Use password from history");
                 System.out.println("2. Enter new password");
                 System.out.print("Choose an option (1 or 2): ");
-                String option = userInputScanner.nextLine();
-                if(option.equals("2")) {
+                int option = Integer.parseInt(userInputScanner.nextLine());
+                
+                if(option == 2) {
                     System.out.print("Enter new password: ");
+                    
                     String newPassword = userInputScanner.nextLine();
                     history.add(newPassword);
+                    
                     toEncryption.println("PASS " + newPassword);
                     toEncryption.flush();
                     
@@ -66,7 +81,7 @@ public class Driver {
                     toLogger.println("PASS");
                     toLogger.flush();
                     
-                } else if(option.equals("1")) {
+                } else if(option == 1) {
                     if(history.isEmpty()) {
                         System.out.println("History is empty.");
                     } else {
