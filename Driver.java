@@ -141,6 +141,8 @@ public class Driver {
                             if(fromEncryption.hasNextLine()) {
                                 String result = fromEncryption.nextLine();
                                 System.out.println(result);
+                                toLogger.println(result);
+                                toLogger.flush();
                                 if (result.startsWith("RESULT ")) {
                                     history.add(result.substring(7));
                                 }
@@ -151,18 +153,22 @@ public class Driver {
                 } else if(option == 2) {
                     System.out.print("Enter text to encrypt: ");
                     userInput = userInputScanner.nextLine();
-                    history.add(userInput);
+                    
                     toEncryption.println("ENCRYPT " + userInput);
                     toEncryption.flush();
+                    toLogger.println("ENCRYPT " + userInput);
+                    toLogger.flush();
                     if(fromEncryption.hasNextLine()) {
                         String result = fromEncryption.nextLine();
                         System.out.println(result);
+                        toLogger.println(result);
+                        toLogger.flush();
                         if (result.startsWith("RESULT ")) {
+                            history.add(userInput);
                             history.add(result.substring(7)); // Add the encrypted result to history
                         }
                     }
-                    toLogger.println("ENCRYPT " + userInput);
-                    toLogger.flush();
+                    
                 } else {
                     System.out.println("Invalid option.");
                 }
@@ -197,6 +203,8 @@ public class Driver {
                             if(fromEncryption.hasNextLine()) {
                                 String result = fromEncryption.nextLine();
                                 System.out.println(result);
+                                toLogger.println(result);
+                                toLogger.flush();
                                 if (result.startsWith("RESULT ")) {
                                     history.add(result.substring(7));
                                 }
@@ -207,7 +215,7 @@ public class Driver {
                 } else if(option == 2) {
                     System.out.print("Enter text to decrypt: ");
                     userInput = userInputScanner.nextLine();
-                    history.add(userInput);
+                    
                     toEncryption.println("DECRYPT " + userInput);
                     toEncryption.flush();
                     toLogger.println("DECRYPT " + userInput);
@@ -215,7 +223,10 @@ public class Driver {
                     if(fromEncryption.hasNextLine()) {
                         String result = fromEncryption.nextLine();
                         System.out.println(result);
+                        toLogger.println(result);
+                        toLogger.flush();
                         if (result.startsWith("RESULT ")) {
+                            history.add(userInput);
                             history.add(result.substring(7));
                         }
                     }

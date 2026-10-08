@@ -55,3 +55,10 @@ logic errors. Everything seems to compile correctly now.
 I will look through the assignment again and verify requirements.
 I added message validation and made all message uppercase so everything has the same result. Passwords are not logged. The commands are inputted seperately unlike the encryption file. 
 I will test the logger once more to see if it's writing to the file. I have to update the git. 
+
+# 10-08 1:08 pm
+I did verify that the logger is being written to correctly. I had an issue where the result would print before the action command, but i have fixed it so the action is written to the log first. I also noticed an error that invalid inputs would still be written to the history, so i added further validation that invalid commands would not be written.
+
+I believe the project is finished as of now. 
+ //reset classes: javac *.java
+ //To run the program: java Driver log.txt
