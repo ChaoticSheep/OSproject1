@@ -9,21 +9,34 @@ public class Logger {
     public static void main(String[] args) throws Exception {
         String fileName = args[0];
         Scanner s = new Scanner(System.in);
-        System.out.println("Logging to " + fileName);
+        
         PrintStream log = new PrintStream(new FileOutputStream(fileName, true));
         
-        LocalDateTime date = LocalDateTime.now();
+        
         DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		String line = s.nextLine();
 
         while (!line.equals("QUIT")) {
-            // finds the first whitespace to seperate command
-            int index = line.indexOf(" ");
-            String action = line.substring(0,index);
+            LocalDateTime date = LocalDateTime.now();
             String formattedDate = date.format(formatTime);
-            log.println(formattedDate + " [" + action + "]" + line.substring(index));
+
+            Scanner lineScanner = new Scanner(line);
+
+            String action = lineScanner.next();
+
+            String message = "";
+            if (lineScanner.hasNextLine()) {
+                message = lineScanner.nextLine();
+            }
+
+            log.println(formattedDate + " [" + action + "]" + message);
+            log.flush();
+
+            lineScanner.close();
+
             line = s.nextLine();
-        } 
+        }
+        
         s.close();
         log.close();
     }
