@@ -49,4 +49,9 @@ I have set up the driver program, I will begin to work on the History section as
 not writing to the log file. I will continue this next session. 
 
 # 10-08 11:36 am
-Continuing to solve the communication. I set up the command line, but there is still an issue reading pass from encryption because the command is sent without a message.
+Continuing to solve the communication. I set up the command line, but there is still an issue reading pass from encryption because the command is sent without a message. I created class files for each and edited some 
+logic errors. Everything seems to compile correctly now.
+
+I will look through the assignment again and verify requirements.
+I added message validation and made all message uppercase so everything has the same result. Passwords are not logged. The commands are inputted seperately unlike the encryption file. 
+I will test the logger once more to see if it's writing to the file. I have to update the git. 

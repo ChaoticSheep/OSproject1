@@ -2,23 +2,38 @@ import java.util.Scanner;
 import java.io.PrintStream;
 
 public class Encryption {
+    private static String passkey = ""; // Store the passkey
+    public static boolean isValidInput(String text) {
+        if (text == null || text.trim().isEmpty()) {
+            return false;
+        }
+        // Check if every character is a letter
+        for (char c : text.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
     public static String encrypt(String text) {
+       text = text.toUpperCase(); // Convert text to uppercase for consistent encryption
         StringBuilder encryptedText = new StringBuilder();
 
         for (char c : text.toCharArray()) {
             // Shift each character forward by 3 positions in the ASCII table
-            char encryptedChar = (char) (c + 3);
+            char encryptedChar = (char) ('A' + (c - 'A' + 3) % 26);
             encryptedText.append(encryptedChar);
         }
 
         return encryptedText.toString();
     }
     public static String decrypt(String encryptedText) {
+        encryptedText = encryptedText.toUpperCase(); // Convert to uppercase for consistent decryptions
         StringBuilder decryptedText = new StringBuilder();
 
         for (char c : encryptedText.toCharArray()) {
             // Shift each character back by 3 positions in the ASCII table
-            char decryptedChar = (char) (c - 3);
+            char decryptedChar = (char) ('A' + (c - 'A' - 3 + 26) % 26);
             decryptedText.append(decryptedChar);
         }
 
@@ -52,9 +67,17 @@ public class Encryption {
             
             String action = line.substring(0, index);
             String message = line.substring(index + 1);
-
-            
-            if (action.equals("ENCRYPT") ) {
+            if (!isValidInput(message)) {
+                System.out.println("ERROR Input must contain letters only.");
+                System.out.flush();
+                continue;
+            }
+            if(action.equals("PASS") && !message.isEmpty()) {
+                passkey = message.toUpperCase();
+                System.out.println("RESULT "+message);
+                System.out.flush();
+            } 
+            else if (action.equals("ENCRYPT") ) {
                 System.out.println("RESULT "+ encrypt(message));
                 
                 System.out.flush();

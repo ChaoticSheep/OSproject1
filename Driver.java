@@ -5,6 +5,8 @@ import java.io.PrintStream;
 import java.util.*;
 
 public class Driver {
+    // Method to validate user input only contains letters and is insensitive to case
+    
     public static void history(ArrayList<String> history) {
 
         if (history.isEmpty()) {
@@ -18,8 +20,8 @@ public class Driver {
             System.out.println((i + 1) + ". " + history.get(i));
         }
     }
-    //javac *.java
-    //java Driver log.txt
+    //reset classes: javac *.java
+    //to run the program:java Driver log.txt
     public static void main(String[] args) throws Exception {
 
         String fileName = args[0];
@@ -69,7 +71,8 @@ public class Driver {
                     System.out.print("Enter new password: ");
                     
                     String newPassword = userInputScanner.nextLine();
-                    history.add(newPassword);
+
+                    //history.add(newPassword); password is not stored in history 
                     
                     toEncryption.println("PASS " + newPassword);
                     toEncryption.flush();
@@ -125,8 +128,7 @@ public class Driver {
                         history(history);
                         //get history choice from user and send to encryption process
                         System.out.print("Choose a text by number: ");
-                        int choice = userInputScanner.nextInt();
-                        userInputScanner.nextLine(); // consume the newline
+                        int choice = Integer.parseInt(userInputScanner.nextLine());
                         // Validate the choice and send the selected text to the encryption process
                         if(choice < 1 || choice > history.size()) {
                             System.out.println("Invalid choice.");
@@ -134,7 +136,8 @@ public class Driver {
                             String selectedText = history.get(choice - 1);
                             toEncryption.println("ENCRYPT " + selectedText);
                             toEncryption.flush();
-                            
+                            toLogger.println("ENCRYPT " + selectedText);
+                            toLogger.flush();
                             if(fromEncryption.hasNextLine()) {
                                 String result = fromEncryption.nextLine();
                                 System.out.println(result);
@@ -142,8 +145,7 @@ public class Driver {
                                     history.add(result.substring(7));
                                 }
                             }
-                            toLogger.println("ENCRYPT " + selectedText);
-                            toLogger.flush();
+                            
                         }
                     }
                 } else if(option == 2) {
@@ -190,7 +192,8 @@ public class Driver {
                             String selectedText = history.get(choice - 1);
                             toEncryption.println("DECRYPT " + selectedText);
                             toEncryption.flush();
-                            
+                            toLogger.println("DECRYPT " + selectedText);
+                            toLogger.flush();
                             if(fromEncryption.hasNextLine()) {
                                 String result = fromEncryption.nextLine();
                                 System.out.println(result);
@@ -198,8 +201,7 @@ public class Driver {
                                     history.add(result.substring(7));
                                 }
                             }
-                            toLogger.println("DECRYPT " + selectedText);
-                            toLogger.flush();
+                            
                         }
                     }
                 } else if(option == 2) {
