@@ -62,3 +62,7 @@ I did verify that the logger is being written to correctly. I had an issue where
 I believe the project is finished as of now. 
  //reset classes: javac *.java
  //To run the program: java Driver log.txt
+
+# 10-12
+This is the link to the github
+ //https://github.com/ChaoticSheep/OSproject1.git
