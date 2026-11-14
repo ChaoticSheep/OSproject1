@@ -1,0 +1,117 @@
+commit b3952e47e28c3fb0382de66bdb737162bb1a5e30
+Author:     ChaoticSheep <117492753+ChaoticSheep@users.noreply.github.com>
+AuthorDate: Sat Oct 17 15:20:20 2026 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: Sat Oct 17 15:20:20 2026 -0500
+
+    Add project description and usage instructions to READMEAdded README
+    
+    This README provides an overview of the project, including its features, requirements, and instructions for running the project.
+
+commit 24145f39ba22d508c7f366ee055c983b1e9038d5
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Mon Oct 12 10:56:32 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Mon Oct 12 10:56:32 2026 -0500
+
+    Update devlog.md
+
+commit 2c8b86abdb5206e58b8554925ecfecc064db8ac0
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Thu Oct 8 13:51:39 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Thu Oct 8 13:51:39 2026 -0500
+
+    Checked log & validation
+    
+    I reviewed the assignment pdf and made sure the program is working correctly. Fixed invalidation issue with history and log writing.
+
+commit 20c793640b492439b076c156a2f95c14e1e69359
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Thu Oct 8 12:43:08 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Thu Oct 8 12:43:08 2026 -0500
+
+    Updated Driver & Encryption
+    
+    I added validation to the messages and made sure the passwords were not in the history.
+
+commit 08fb3f57343b0483d67478c35cb01f4f1c3bd11d
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Thu Oct 8 12:03:06 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Thu Oct 8 12:03:06 2026 -0500
+
+    Updating files
+
+commit 4cac8a2f46ccab6799b068a843131c17c46124b5
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Thu Oct 8 10:34:58 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Thu Oct 8 10:34:58 2026 -0500
+
+    Made Driver file
+    
+    I made the driver file and the commands nessecary, it is not writing to the log.txt, will work on this next.
+
+commit 5577f8a7cec77448be26e9ca7b94e5fdc8d83a46
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Wed Oct 7 15:40:13 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Wed Oct 7 15:40:13 2026 -0500
+
+    Update devlog.md
+
+commit ce4e6e9290f81eac352e657f31caeaf6a55204d0
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Wed Oct 7 14:16:16 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Wed Oct 7 14:16:16 2026 -0500
+
+    fixed encryption file
+    
+    I fixed the file to include processes and fixed the communication error between the parent and child process.
+
+commit 6c67c99a97fd8a4ac3be69df0d9575dc51751041
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Wed Oct 7 11:05:12 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Wed Oct 7 11:05:12 2026 -0500
+
+    minor devlog update
+
+commit 54f60d3bb39b8ae8a387a13f5cef3bf7b0fc3ec2
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Wed Oct 7 10:54:14 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Wed Oct 7 10:54:14 2026 -0500
+
+    Added Encryption
+    
+    I have added the encryption file and the according functions/methods. There is PASS, ENCRYPT, and DECRYPT functions. If there is any error it will output ERROR and the message with it, and RESULT if the user inputs according to the command statement.
+
+commit 13ee59b17d1d2571a3e8be1c1c40e23e6de797bd
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Tue Oct 6 21:40:55 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Tue Oct 6 21:40:55 2026 -0500
+
+    Update devlog.md
+
+commit b609eb2321273fb29831719f0db6b13c4ddeee8c
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Tue Oct 6 21:30:28 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Tue Oct 6 21:30:28 2026 -0500
+
+    Update Logger.java
+
+commit 0b9609d31c45a847bdcd2c781da865a056875276
+Author:     ChaoticSheep <amarissagarza@gmail.com>
+AuthorDate: Tue Oct 6 21:24:08 2026 -0500
+Commit:     ChaoticSheep <amarissagarza@gmail.com>
+CommitDate: Tue Oct 6 21:24:08 2026 -0500
+
+    Logger Setup
+    
+    I setup my existing code and trying to implement the single command line argument.
